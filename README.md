@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This tutorial provides a step-by-step guide on how to use GPG encryption with GitHub to encrypt commits and signatures. This allows you to verify work and sign commits cryptographically to ensure authenticity.  
+This tutorial provides a step-by-step guide on using GPG signatures with GitHub to cryptographically sign commits for identity verification and integrity. Digitally signing commits with GPG allows you to generate tamper-evident hashes that validate author identity rather than encrypting the contents. This allows others to trust that specific approved GPG keys were used to produce commits pushed from a GitHub account.
 
 ## Prerequisites  
 
@@ -20,9 +20,9 @@ gpg --full-generate-key
 ```
 
 (Select option 1 for RSA and RSA)  
-(Select 4096 bit key size when prompted)
+(Select 4096-bit key size when prompted)
 
-(Select whether key should expire)  
+(Select whether the key should expire)  
 
 (Enter GitHub email address for user ID)
 
@@ -86,7 +86,7 @@ git commit --amend -S -m "commit message"
    ```   
    gpg --export-secret-keys [KEY_ID] > my-private-key-backup.gpg
    ```
-2. Store backup in very safe & secure place (e.g. encrypted USB drive)   
+2. Store backup in a very safe & secure place (e.g. encrypted USB drive)   
 
 ## Additional Resources    
 
